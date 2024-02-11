@@ -1,0 +1,12 @@
+﻿@using VivesBlog.Models
+@model Article
+
+<tr>
+	<td>@Model.Title</td>
+	<td>@Model.Author.FirstName @Model.Author.LastName</td>
+	<td>@Model.CreatedDate.ToString("dd/MM/yyyy HH:mm")</td>
+	<td>
+		<a class="btn btn-light" asp-action="Edit" asp-route-id="@Model.Id">Edit</a>
+		<a class="btn btn-danger" asp-action="Delete" asp-route-id="@Model.Id">Delete</a>
+	</td>
+</tr>

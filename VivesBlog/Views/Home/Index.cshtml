@@ -1,4 +1,5 @@
-﻿@model IList<Article>
+﻿@using VivesBlog.Models
+@model IList<Article>
 
 @{
     ViewData["Title"] = "Home Page";
@@ -8,10 +9,16 @@
 	<header>
 		<h1>Vives Blog</h1>
 	</header>
-
-	@foreach (var article in Model)
+	
+	@if (Model != null)
 	{
-		<partial name="ArticlePartial" model="article"/>
+		@foreach (var article in Model)
+		{
+			<partial name="ArticlePartial" model="article" />
+		}
 	}
-
+	else
+	{
+		<p>The model is null.</p>
+	}
 </section>

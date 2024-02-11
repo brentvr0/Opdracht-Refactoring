@@ -1,0 +1,14 @@
+﻿@using VivesBlog.Models
+@model ArticleModel
+
+@{
+	ViewData["Title"] = "Edit Article";
+}
+
+<form method="post">
+	<input type="hidden" asp-for="Article.Id" />
+
+	<partial name="CreateEditPartial" model="Model" />
+
+	<button class="btn btn-primary" type="submit">Save</button>
+</form>

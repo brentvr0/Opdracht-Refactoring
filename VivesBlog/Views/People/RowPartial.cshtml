@@ -1,0 +1,11 @@
+﻿@using VivesBlog.Models
+@model Person
+
+<tr>
+	<td>@Model.FirstName</td>
+	<td>@Model.LastName</td>
+	<td>
+		<a class="btn btn-light" asp-action="Edit" asp-route-id="@Model.Id">Edit</a>
+		<a class="btn btn-danger" asp-action="Delete" asp-route-id="@Model.Id">Delete</a>
+	</td>
+</tr>

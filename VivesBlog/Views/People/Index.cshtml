@@ -1,0 +1,25 @@
+﻿@using VivesBlog.Models
+@model IList<Person>
+@{
+	ViewData["Title"] = "Manage people";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<a class="btn btn-primary" asp-action="Create">New Person</a>
+
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th>First Name</th>
+			<th>Last Name</th>
+			<th>Actions</th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var person in Model)
+		{
+			<partial name="RowPartial" model="person" />
+		}
+	</tbody>
+</table>

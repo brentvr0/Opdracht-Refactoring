@@ -1,0 +1,35 @@
+﻿@using VivesBlog.Models
+@model IList<Article>
+
+@{
+	ViewData["Title"] = "Blog Management";
+}
+
+
+<h1>Manage Blog Posts</h1>
+
+<a class="btn btn-primary" asp-action="Create">New Blog Post</a>
+
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th>Title</th>
+			<th>Author</th>
+			<th>Created</th>
+			<th>Actions</th>
+		</tr>
+	</thead>
+	<tbody>
+		@if (Model is null)
+		{
+			return;
+		}
+		else
+		{
+			@foreach (var article in Model)
+			{
+				<partial name="RowPartial" model="article" />
+			}
+		}
+	</tbody>
+</table>
